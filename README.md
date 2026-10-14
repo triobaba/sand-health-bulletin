@@ -3,7 +3,7 @@
 Automated production of Rwanda's quarterly neonatal-care bulletin from DHIS2-style facility exports, with every figure traceable to its source and qualified by how complete its data is.
 
 **Status:** prototype on the assignment's sample data. Not an official Ministry of Health publication.
-**Live:** `https://sandrwanda.netlify.app/` (dashboard, with the PDF bulletin to download)
+**Live:** `https://YOUR-SITE.netlify.app` (dashboard, with the PDF bulletin to download)
 **Context:** Sand Forward Deployed Engineer assignment, Triumphant Babalola. The problem selection, the target design on Sand's products, the production plan and the handover are in the written submission. This document covers the system itself.
 
 ---
@@ -101,7 +101,7 @@ sequenceDiagram
     PW-->>SITE: downloads/quarterly-health-bulletin-2024Q4.pdf
     BS-->>ME: Console summary and exit code
     ME->>SITE: Open the dashboard, read the data-quality findings first
-    ME->>DH: Correct at source; confirm which January and March reports are right
+    ME->>DH: Correct at source, and confirm which January and March reports are right
     ME->>NL: Deploy site/ once signed off
     NL-->>DIR: Dashboard link, with the PDF to download
 ```
