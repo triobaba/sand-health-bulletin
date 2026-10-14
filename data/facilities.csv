@@ -1,0 +1,118 @@
+facility_id,facility_name,district,province,tier_level,gps_lat,gps_lon,nicu_available,nicu_beds,incubators_functional,incubators_total,radiant_warmers,phototherapy_units,cpap_machines,resuscitation_tables,kangaroo_care_space,electricity_reliable,backup_generator
+NYA001,Nyarugenge Hospital,Nyarugenge,Kigali City,Provincial,-2.6323,30.0791,Partial,0,6,8,5,2,2,2,Partial,Yes,Yes
+NYA002,Nyarugenge Health Center 1,Nyarugenge,Kigali City,Health Center,-1.7648,30.4147,No,0,1,2,1,1,0,2,No,Yes,Yes
+NYA003,Nyarugenge Health Center 2,Nyarugenge,Kigali City,Provincial,-2.5888,30.2792,Partial,0,5,9,6,5,2,2,Yes,No,Yes
+NYA004,Nyarugenge Health Center 3,Nyarugenge,Kigali City,Referral,-2.8699,29.2867,Yes,19,13,14,8,10,5,5,No,Yes,Yes
+NYA005,Nyarugenge Health Center 4,Nyarugenge,Kigali City,Health Center,-1.5397,29.6363,No,0,1,1,1,1,0,2,Partial,Yes,Yes
+GAS006,Gasabo Hospital,Gasabo,Kigali City,District,-2.7784,29.8364,No,0,3,3,1,0,0,1,No,Yes,No
+GAS007,Gasabo Health Center 1,Gasabo,Kigali City,Provincial,-1.619,29.6125,Partial,0,4,4,3,4,3,2,Yes,No,No
+GAS008,Gasabo Health Center 2,Gasabo,Kigali City,Health Center,-1.6306,30.4508,No,0,2,3,3,2,0,1,Yes,No,Yes
+GAS009,Gasabo Health Center 3,Gasabo,Kigali City,Health Center,-1.0537,30.5612,No,0,0,0,3,0,0,1,No,No,Yes
+KIC010,Kicukiro Hospital,Kicukiro,Kigali City,Provincial,-2.675,30.0842,No,0,8,10,5,2,1,3,Yes,Yes,Yes
+KIC011,Kicukiro Health Center 1,Kicukiro,Kigali City,District,-2.1372,29.9779,No,0,2,4,2,2,0,2,Partial,No,Yes
+KIC012,Kicukiro Health Center 2,Kicukiro,Kigali City,Referral,-1.5117,30.7011,Yes,25,14,19,10,7,4,5,No,Yes,Yes
+KIC013,Kicukiro Health Center 3,Kicukiro,Kigali City,Health Center,-2.5759,30.1786,No,0,2,2,1,2,0,2,No,No,Yes
+HUY014,Huye Hospital,Huye,Southern,District,-2.4911,29.3371,No,0,2,4,2,0,0,1,Partial,Yes,Yes
+HUY015,Huye Health Center 1,Huye,Southern,Provincial,-1.2102,29.0095,Yes,8,4,7,4,3,0,2,Partial,No,No
+HUY016,Huye Health Center 2,Huye,Southern,District,-1.3241,29.5993,No,0,3,3,3,0,0,1,Yes,No,Yes
+NYA017,Nyanza Hospital,Nyanza,Southern,Health Center,-2.7609,29.5478,No,0,1,2,2,2,0,2,Partial,No,Yes
+NYA018,Nyanza Health Center 1,Nyanza,Southern,District,-1.5008,30.871,No,0,2,2,1,2,0,2,Yes,No,No
+NYA019,Nyanza Health Center 2,Nyanza,Southern,Health Center,-1.2781,30.522,No,0,2,2,2,1,0,2,Partial,No,No
+NYA020,Nyanza Health Center 3,Nyanza,Southern,District,-2.7072,29.3912,No,0,1,1,1,1,0,1,Partial,No,No
+NYA021,Nyanza Health Center 4,Nyanza,Southern,Health Center,-2.6836,30.359,No,0,0,2,0,2,0,1,Yes,Yes,No
+GIS022,Gisagara Hospital,Gisagara,Southern,Health Center,-2.5432,30.128,No,0,0,0,3,1,0,1,Yes,No,Yes
+GIS023,Gisagara Health Center 1,Gisagara,Southern,District,-2.3823,30.5355,No,0,2,3,1,2,0,1,Yes,Yes,Yes
+GIS024,Gisagara Health Center 2,Gisagara,Southern,Health Center,-1.8725,29.185,No,0,3,4,2,0,0,1,Yes,No,Yes
+GIS025,Gisagara Health Center 3,Gisagara,Southern,Provincial,-2.5221,30.3585,No,0,4,6,3,3,1,2,Yes,Yes,No
+GIS026,Gisagara Health Center 4,Gisagara,Southern,District,-1.4491,29.2391,No,0,0,0,2,1,0,2,Partial,No,No
+NYA027,Nyaruguru Hospital,Nyaruguru,Southern,Provincial,-1.9952,30.88,Partial,0,3,4,3,5,3,2,Yes,No,No
+NYA028,Nyaruguru Health Center 1,Nyaruguru,Southern,Health Center,-1.4206,29.0449,No,0,0,0,3,1,0,1,Yes,Yes,No
+NYA029,Nyaruguru Health Center 2,Nyaruguru,Southern,District,-1.6863,29.7886,No,0,2,2,1,1,0,2,Yes,No,No
+MUH030,Muhanga Hospital,Muhanga,Southern,District,-2.4442,30.4695,No,0,1,2,0,2,0,1,Partial,Yes,Yes
+MUH031,Muhanga Health Center 1,Muhanga,Southern,Health Center,-1.4705,30.0225,No,0,2,3,1,0,0,1,Yes,No,No
+MUH032,Muhanga Health Center 2,Muhanga,Southern,Health Center,-1.418,30.4691,No,0,0,2,1,0,0,1,No,No,No
+KAM033,Kamonyi Hospital,Kamonyi,Southern,Health Center,-2.6288,29.6396,No,0,3,4,1,0,0,2,Partial,Yes,Yes
+KAM034,Kamonyi Health Center 1,Kamonyi,Southern,Health Center,-1.777,30.8456,No,0,3,3,2,0,0,1,No,Yes,No
+KAM035,Kamonyi Health Center 2,Kamonyi,Southern,District,-2.5933,30.1455,No,0,1,2,0,1,0,2,Yes,No,No
+KAM036,Kamonyi Health Center 3,Kamonyi,Southern,District,-2.6061,29.9356,No,0,2,4,2,1,0,1,Yes,No,No
+RUH037,Ruhango Hospital,Ruhango,Southern,District,-1.967,30.0282,No,0,1,1,3,0,0,2,Partial,No,No
+RUH038,Ruhango Health Center 1,Ruhango,Southern,District,-1.2026,30.0143,No,0,3,3,3,2,0,2,Partial,No,Yes
+RUH039,Ruhango Health Center 2,Ruhango,Southern,District,-1.6284,29.2091,No,0,1,1,0,2,0,2,Yes,Yes,No
+NYA040,Nyamagabe Hospital,Nyamagabe,Southern,Health Center,-1.5259,30.2223,No,0,2,4,2,2,0,1,Yes,Yes,Yes
+NYA041,Nyamagabe Health Center 1,Nyamagabe,Southern,District,-2.8864,30.7707,No,0,2,3,3,2,0,1,No,No,No
+NYA042,Nyamagabe Health Center 2,Nyamagabe,Southern,Health Center,-2.1645,29.553,No,0,1,2,3,1,0,1,Yes,No,No
+NYA043,Nyamagabe Health Center 3,Nyamagabe,Southern,District,-1.3796,29.2168,No,0,1,2,1,2,0,1,No,Yes,No
+MUS044,Musanze Hospital,Musanze,Northern,Provincial,-2.5616,29.3119,Yes,11,3,5,4,2,0,3,Yes,Yes,No
+MUS045,Musanze Health Center 1,Musanze,Northern,Provincial,-1.8774,30.3845,No,0,7,9,4,5,2,3,Partial,Yes,Yes
+MUS046,Musanze Health Center 2,Musanze,Northern,Provincial,-2.8251,29.35,Yes,9,3,5,5,2,1,2,Yes,No,Yes
+BUR047,Burera Hospital,Burera,Northern,District,-1.012,30.5424,No,0,1,2,3,1,0,1,No,No,No
+BUR048,Burera Health Center 1,Burera,Northern,Health Center,-1.9362,30.3757,No,0,1,2,2,0,0,2,Yes,Yes,Yes
+BUR049,Burera Health Center 2,Burera,Northern,Health Center,-1.0002,29.3051,No,0,0,0,2,0,0,2,Yes,Yes,Yes
+GAK050,Gakenke Hospital,Gakenke,Northern,Health Center,-1.5782,29.5641,No,0,2,4,0,0,0,2,Partial,Yes,Yes
+GAK051,Gakenke Health Center 1,Gakenke,Northern,Health Center,-2.4274,30.5975,No,0,0,1,1,1,0,1,Yes,No,No
+GAK052,Gakenke Health Center 2,Gakenke,Northern,District,-1.3485,29.3503,No,0,2,2,2,2,0,1,Yes,No,Yes
+GAK053,Gakenke Health Center 3,Gakenke,Northern,District,-1.9836,29.9552,No,0,0,2,2,1,0,2,Partial,Yes,Yes
+GAK054,Gakenke Health Center 4,Gakenke,Northern,Health Center,-2.6028,29.5061,No,0,1,3,2,0,0,2,No,No,Yes
+GIC055,Gicumbi Hospital,Gicumbi,Northern,District,-1.7289,29.716,No,0,2,2,2,0,0,1,Yes,Yes,No
+GIC056,Gicumbi Health Center 1,Gicumbi,Northern,District,-1.7787,30.7215,No,0,2,4,3,0,0,2,Yes,Yes,No
+GIC057,Gicumbi Health Center 2,Gicumbi,Northern,District,-1.7964,29.1463,No,0,0,0,3,2,0,1,No,No,Yes
+GIC058,Gicumbi Health Center 3,Gicumbi,Northern,District,-2.1802,29.4551,No,0,3,4,2,1,0,2,Partial,No,No
+GIC059,Gicumbi Health Center 4,Gicumbi,Northern,Health Center,-2.0589,30.2754,No,0,0,0,1,1,0,1,Partial,No,Yes
+RUL060,Rulindo Hospital,Rulindo,Northern,Provincial,-1.6932,30.2768,Yes,7,4,4,5,2,2,3,No,Yes,No
+RUL061,Rulindo Health Center 1,Rulindo,Northern,District,-1.7415,29.7675,No,0,0,2,0,2,0,2,Yes,No,No
+RUL062,Rulindo Health Center 2,Rulindo,Northern,District,-2.3392,29.8108,No,0,1,3,2,0,0,2,No,Yes,Yes
+NGO063,Ngoma Hospital,Ngoma,Eastern,District,-1.0024,29.2614,No,0,0,0,0,1,0,1,Yes,Yes,Yes
+NGO064,Ngoma Health Center 1,Ngoma,Eastern,District,-2.2181,30.1773,No,0,2,4,1,0,0,2,Partial,No,No
+NGO065,Ngoma Health Center 2,Ngoma,Eastern,Health Center,-2.5665,30.0578,No,0,1,3,0,1,0,2,No,Yes,No
+BUG066,Bugesera Hospital,Bugesera,Eastern,District,-2.3779,29.954,No,0,0,2,3,2,0,1,No,No,Yes
+BUG067,Bugesera Health Center 1,Bugesera,Eastern,District,-2.4611,30.0105,No,0,3,4,3,1,0,1,Yes,No,Yes
+BUG068,Bugesera Health Center 2,Bugesera,Eastern,Health Center,-1.7513,30.0468,No,0,2,2,0,1,0,1,Yes,No,No
+BUG069,Bugesera Health Center 3,Bugesera,Eastern,Health Center,-1.1698,29.4916,No,0,0,2,3,0,0,2,Yes,Yes,No
+RWA070,Rwamagana Hospital,Rwamagana,Eastern,Health Center,-1.1962,30.6499,No,0,3,4,3,1,0,1,Yes,No,No
+RWA071,Rwamagana Health Center 1,Rwamagana,Eastern,Health Center,-2.8222,30.4514,No,0,3,5,0,1,0,1,Yes,No,No
+RWA072,Rwamagana Health Center 2,Rwamagana,Eastern,Provincial,-2.1252,29.9374,Partial,0,3,6,3,5,1,3,No,Yes,No
+GAT073,Gatsibo Hospital,Gatsibo,Eastern,Health Center,-1.6767,29.7247,No,0,2,2,0,0,0,1,Yes,Yes,Yes
+GAT074,Gatsibo Health Center 1,Gatsibo,Eastern,Health Center,-2.6385,30.6794,No,0,3,4,0,1,0,2,Yes,No,Yes
+GAT075,Gatsibo Health Center 2,Gatsibo,Eastern,Provincial,-1.1249,30.5878,No,0,5,7,3,4,2,3,Yes,Yes,Yes
+GAT076,Gatsibo Health Center 3,Gatsibo,Eastern,District,-2.5902,29.387,No,0,0,2,2,0,0,1,No,No,Yes
+GAT077,Gatsibo Health Center 4,Gatsibo,Eastern,District,-2.8738,30.5122,No,0,2,2,3,2,0,2,Yes,No,No
+KAY078,Kayonza Hospital,Kayonza,Eastern,Health Center,-2.6452,28.9773,No,0,0,1,1,2,0,1,No,No,Yes
+KAY079,Kayonza Health Center 1,Kayonza,Eastern,Health Center,-2.7144,29.2544,No,0,2,3,3,2,0,1,No,No,Yes
+KAY080,Kayonza Health Center 2,Kayonza,Eastern,Health Center,-1.6415,29.1771,No,0,1,1,1,2,0,1,No,Yes,Yes
+KAY081,Kayonza Health Center 3,Kayonza,Eastern,District,-1.1125,30.5716,No,0,3,5,1,2,0,2,Yes,No,No
+KIR082,Kirehe Hospital,Kirehe,Eastern,District,-2.8557,29.143,No,0,2,4,0,2,0,2,Yes,Yes,No
+KIR083,Kirehe Health Center 1,Kirehe,Eastern,District,-1.7162,30.2656,No,0,3,3,1,2,0,1,Yes,No,Yes
+KIR084,Kirehe Health Center 2,Kirehe,Eastern,Health Center,-1.2991,29.9801,No,0,3,5,0,1,0,2,Partial,No,Yes
+KIR085,Kirehe Health Center 3,Kirehe,Eastern,Health Center,-1.8373,29.6902,No,0,1,1,3,2,0,1,Yes,Yes,No
+NYA086,Nyagatare Hospital,Nyagatare,Eastern,Provincial,-2.0208,29.4007,No,0,8,10,5,5,1,2,Yes,No,Yes
+NYA087,Nyagatare Health Center 1,Nyagatare,Eastern,Health Center,-2.5476,30.4071,No,0,2,3,1,2,0,2,No,No,No
+NYA088,Nyagatare Health Center 2,Nyagatare,Eastern,Provincial,-1.7534,30.8497,Partial,0,3,5,4,3,2,3,Partial,Yes,Yes
+NYA089,Nyagatare Health Center 3,Nyagatare,Eastern,Health Center,-2.7987,29.9213,No,0,1,1,3,0,0,1,Yes,No,No
+RUB090,Rubavu Hospital,Rubavu,Western,Health Center,-1.389,30.828,No,0,1,1,0,2,0,1,Yes,No,Yes
+RUB091,Rubavu Health Center 1,Rubavu,Western,District,-2.3959,30.8179,No,0,3,3,2,2,0,2,Yes,No,No
+RUB092,Rubavu Health Center 2,Rubavu,Western,District,-1.9673,30.17,No,0,1,1,0,0,0,1,Yes,No,No
+NYA093,Nyabihu Hospital,Nyabihu,Western,District,-1.2275,30.8265,No,0,3,4,1,1,0,1,Yes,No,Yes
+NYA094,Nyabihu Health Center 1,Nyabihu,Western,Health Center,-2.2314,30.8318,No,0,3,5,3,0,0,1,Yes,Yes,Yes
+NYA095,Nyabihu Health Center 2,Nyabihu,Western,District,-1.0078,29.6224,No,0,2,4,2,1,0,1,No,No,Yes
+NYA096,Nyabihu Health Center 3,Nyabihu,Western,Health Center,-1.7044,30.1854,No,0,3,3,2,2,0,1,Yes,No,Yes
+NYA097,Nyabihu Health Center 4,Nyabihu,Western,Provincial,-1.2124,30.4374,Yes,5,3,6,3,5,3,2,Yes,Yes,No
+NGO098,Ngororero Hospital,Ngororero,Western,Provincial,-1.287,29.5691,Partial,0,5,5,3,3,1,3,Partial,No,No
+NGO099,Ngororero Health Center 1,Ngororero,Western,Provincial,-2.0943,28.9175,No,0,4,5,4,4,1,2,No,No,Yes
+NGO100,Ngororero Health Center 2,Ngororero,Western,Provincial,-1.1237,30.4688,Partial,0,7,10,3,4,1,2,Partial,Yes,No
+NGO101,Ngororero Health Center 3,Ngororero,Western,District,-2.6977,29.8056,No,0,0,1,3,2,0,2,No,No,Yes
+NGO102,Ngororero Health Center 4,Ngororero,Western,Health Center,-1.5334,29.7003,No,0,3,5,2,2,0,2,No,No,Yes
+RUS103,Rusizi Hospital,Rusizi,Western,Provincial,-1.7821,30.6665,Yes,12,7,8,4,2,3,2,No,Yes,No
+RUS104,Rusizi Health Center 1,Rusizi,Western,District,-2.7928,30.0314,No,0,0,2,1,0,0,1,Yes,Yes,Yes
+RUS105,Rusizi Health Center 2,Rusizi,Western,District,-2.3575,29.7795,No,0,2,3,2,0,0,1,Partial,No,Yes
+NYA106,Nyamasheke Hospital,Nyamasheke,Western,Health Center,-1.8374,30.6651,No,0,1,1,3,2,0,1,No,Yes,Yes
+NYA107,Nyamasheke Health Center 1,Nyamasheke,Western,Provincial,-1.8314,29.3988,Yes,12,4,8,6,4,0,3,No,Yes,No
+NYA108,Nyamasheke Health Center 2,Nyamasheke,Western,Health Center,-1.8543,29.3459,No,0,3,3,1,0,0,1,Yes,Yes,No
+RUT109,Rutsiro Hospital,Rutsiro,Western,District,-2.5609,28.9803,No,0,0,1,3,0,0,2,Yes,No,No
+RUT110,Rutsiro Health Center 1,Rutsiro,Western,Health Center,-1.6621,29.2002,No,0,0,0,2,2,0,2,Yes,No,No
+RUT111,Rutsiro Health Center 2,Rutsiro,Western,District,-1.9929,29.6752,No,0,1,2,2,0,0,2,No,Yes,No
+RUT112,Rutsiro Health Center 3,Rutsiro,Western,District,-1.8036,30.6261,No,0,2,3,3,1,0,1,Yes,No,No
+RUT113,Rutsiro Health Center 4,Rutsiro,Western,Provincial,-2.4664,30.4347,No,0,8,10,3,2,2,2,Partial,Yes,Yes
+KAR114,Karongi Hospital,Karongi,Western,Provincial,-1.2923,29.6874,Yes,7,3,4,4,3,0,3,No,Yes,Yes
+KAR115,Karongi Health Center 1,Karongi,Western,Provincial,-1.872,29.2167,No,0,8,12,3,5,1,3,Yes,Yes,Yes
+KAR116,Karongi Health Center 2,Karongi,Western,Health Center,-2.0075,28.9668,No,0,0,1,3,0,0,1,Yes,Yes,No
+KAR117,Karongi Health Center 3,Karongi,Western,Provincial,-2.7724,29.2399,No,0,6,9,6,2,2,2,Partial,Yes,No

@@ -1,0 +1,20 @@
+# The site is built locally with `python build_site.py` and committed in site/.
+# Netlify only serves the files, so there is no build command.
+[build]
+  publish = "site"
+  command = ""
+
+[[headers]]
+  for = "/downloads/*.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"
+    Content-Disposition = "attachment"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    # The site uses the Ministry of Health's name but is a prototype, so it is
+    # kept out of search results. Share the link directly instead.
+    X-Robots-Tag = "noindex, nofollow"
+    Referrer-Policy = "strict-origin-when-cross-origin"

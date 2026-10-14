@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Quarterly Health Bulletin, {{ latest_q }}</title>
+<style>
+  /* Sand Route B, matching the dashboard: ink #0a0a0a, paper #f5f1ea, amber
+     #f1ae0a for marks only, Inter Tight for text, Lilex for small labels.
+     Chart colours are the validated pair used on the dashboard (light mode). */
+  @font-face { font-family: "BSans"; font-weight: 400; src: url("fonts/InterTight-400-normal.ttf") format("truetype"); }
+  @font-face { font-family: "BSans"; font-weight: 600; src: url("fonts/InterTight-600-normal.ttf") format("truetype"); }
+  @font-face { font-family: "BSans"; font-weight: 700; src: url("fonts/InterTight-700-normal.ttf") format("truetype"); }
+  @font-face { font-family: "BMono"; font-weight: 400; src: url("fonts/Lilex-400-normal.ttf") format("truetype"); }
+  :root { --ink:#0a0a0a; --ink2:#2a2a2a; --muted:#6b6760; --paper:#f5f1ea; --page:#fbf9f5; --line:#e2ddd2;
+          --amber:#f1ae0a; --amber-ink:#8a5a00; --amber-soft:#fbf1d9; --slate-soft:#eaf0f3; --ok:#2a6f4f; --ok-soft:#e8f2ec;
+          --bar:#1f6fa6; --bar2:#b97f08; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body { margin: 0; font-family: BSans, Helvetica, Arial, sans-serif; color: var(--ink2); font-size: 9.2pt; line-height: 1.5; letter-spacing: -.003em; }
+  /* When the HTML copy in output/ is opened in a browser, show it at A4 width. */
+  @media screen { body { max-width: 182mm; margin: 12mm auto; } }
+  .mono, .kicker, h3, th, .flag, .tile .c { font-family: BMono, ui-monospace, monospace; text-transform: uppercase; letter-spacing: .06em; font-weight: 400; }
+  h1 { font-size: 24pt; font-weight: 700; letter-spacing: -.035em; color: var(--ink); margin: 3pt 0 2pt; line-height: 1.08; }
+  h2 { font-size: 13.5pt; font-weight: 700; letter-spacing: -.02em; color: var(--ink); margin: 14pt 0 6pt; padding-bottom: 4pt; border-bottom: .3mm solid var(--ink); break-after: avoid; }
+  h3 { font-size: 6.8pt; color: var(--muted); margin: 10pt 0 4pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  .kicker { font-size: 6.8pt; color: var(--ink); display: flex; align-items: center; gap: 5pt; }
+  .kicker::before { content: "→"; font-family: BSans, sans-serif; color: var(--amber); font-weight: 700; }
+  .kicker .rule { flex: 1; height: .3mm; background: rgba(10,10,10,.25); }
+  .meta { color: var(--muted); font-size: 8pt; margin-bottom: 8pt; }
+  .banner { background: var(--amber-soft); border-left: 1mm solid var(--amber); padding: 6pt 10pt; margin: 8pt 0 10pt; font-size: 8.6pt; }
+  .banner b { color: var(--ink); }
+  .tiles { display: flex; gap: 0; margin: 6pt 0; border: .3mm solid var(--line); }
+  .tile { flex: 1; background: #fff; padding: 7pt 9pt; border-left: .3mm solid var(--line); }
+  .tile:first-child { border-left: 0; }
+  .tile .v { font-size: 17pt; color: var(--ink); font-weight: 700; letter-spacing: -.03em; line-height: 1.1; }
+  .tile .l { font-size: 7.6pt; color: var(--muted); margin-top: 2pt; line-height: 1.3; }
+  .tile .c { display: inline-block; margin-top: 4pt; font-size: 6pt; padding: 1pt 5pt; background: var(--amber-soft); color: var(--amber-ink); }
+  .tile .c.ok { background: var(--ok-soft); color: var(--ok); }
+  table { width: 100%; border-collapse: collapse; margin: 4pt 0 6pt; font-size: 8pt; font-variant-numeric: tabular-nums; }
+  th { text-align: left; background: var(--paper); padding: 4pt 5pt; border-bottom: .3mm solid var(--ink); font-size: 6pt; color: var(--muted); vertical-align: bottom; }
+  td { padding: 3.4pt 5pt; border-bottom: .3mm solid var(--line); vertical-align: top; }
+  td b { color: var(--ink); }
+  td.n, th.n { text-align: right; }
+  tr { break-inside: avoid; }
+  .flag { display: inline-block; font-size: 5.8pt; padding: .5pt 4pt; background: var(--amber-soft); color: var(--amber-ink); }
+  .flag.ok { background: var(--ok-soft); color: var(--ok); }
+  .note { color: var(--muted); font-size: 7.6pt; }
+  .chart { width: 100%; height: auto; margin: 4pt 0; }
+  .issue { border: .3mm solid var(--line); border-left: 1mm solid var(--amber); padding: 5pt 8pt; margin: 0 0 5pt; break-inside: avoid; background: #fff; }
+  .issue b { color: var(--ink); }
+  .ids { color: var(--muted); font-size: 7.2pt; }
+  ul { margin: 2pt 0 6pt; padding-left: 13pt; }
+  li { margin-bottom: 2pt; }
+  li::marker { color: var(--amber); }
+  li b { color: var(--ink); }
+  .two { display: flex; gap: 12pt; }
+  .two > div { flex: 1; min-width: 0; }
+  .page-break { break-before: page; }
+  table.compact td { padding: 2.4pt 5pt; }
+  table.compact { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<div class="kicker">Prototype for the Rwanda Ministry of Health · Prepared for Sand <span class="rule"></span></div>
+<h1>Quarterly Health Bulletin: Neonatal Care, 2024</h1>
+<div class="meta">Latest quarter {{ latest_q }} · generated {{ generated_at }} · source: DHIS2-like facility-month export, {{ perf_summary.n }} facilities</div>
+
+<div class="banner"><b>Figures are provisional.</b> Every quarterly figure shows how many of its three months are in the data. February and December are missing for every facility, and January and March each arrived twice with different numbers. Read the data-quality section before quoting any figure.</div>
+
+<h2>Headline numbers, {{ latest_q }}</h2>
+<div class="tiles">
+  <div class="tile"><div class="v">{{ headline.deliveries|num }}</div><div class="l">Deliveries</div><span class="c">{{ headline_cov.months_present }} of {{ headline_cov.months_expected }} months</span></div>
+  <div class="tile"><div class="v">{{ headline.live_births|num }}</div><div class="l">Live births</div><span class="c">{{ headline_cov.months_present }} of {{ headline_cov.months_expected }} months</span></div>
+  <div class="tile"><div class="v">{{ headline.stillbirth_rate_per_1000|num(1) }}</div><div class="l">Stillbirths per 1,000 births</div><span class="c ok">rate, comparable</span></div>
+  <div class="tile"><div class="v">{{ headline.nmr_per_1000|num(1) }}</div><div class="l">Neonatal deaths per 1,000 live births (0 to 28 days)</div><span class="c ok">rate, comparable</span></div>
+</div>
+<p class="note">{{ latest_q }} contains {{ headline_cov.months_in_data }} only. Counts are not comparable with a full quarter. Rates are comparable but rest on fewer births.</p>
+
+<h2>Deliveries and coverage by quarter</h2>
+<div class="two">
+  <div>
+    <svg class="chart" viewBox="0 0 320 170" role="img" aria-label="Deliveries by quarter, with months of data per quarter">
+      {% set W = 320 %}{% set base = 135 %}{% set top = 22 %}
+      <line x1="10" y1="{{ base }}" x2="310" y2="{{ base }}" stroke="#b8b2a3" stroke-width="1"/>
+      {% for row in national_rows %}
+        {% set h = (row.deliveries / max_deliveries) * (base - top) %}
+        {% set x = 22 + loop.index0 * 74 %}
+        {% set full = row.months_present >= row.months_expected %}
+        <rect x="{{ x }}" y="{{ base - h }}" width="52" height="{{ h }}" rx="3" fill="{{ '#1f6fa6' if full else '#b97f08' }}"/>
+        <text x="{{ x + 26 }}" y="{{ base - h - 5 }}" font-size="9" text-anchor="middle" fill="#0a0a0a" font-family="BSans">{{ row.deliveries|num }}</text>
+        <text x="{{ x + 26 }}" y="{{ base + 13 }}" font-size="9" text-anchor="middle" fill="#0a0a0a" font-weight="700" font-family="BSans">{{ row.quarter[-2:] }}</text>
+        <text x="{{ x + 26 }}" y="{{ base + 25 }}" font-size="7.5" text-anchor="middle" fill="#6b6760" font-family="BSans">{{ row.months_present }} of {{ row.months_expected }} months</text>
+      {% endfor %}
+    </svg>
+    <p class="note">Amber bars are quarters missing a month. The fall from Q3 to Q4 is mostly the missing December, not fewer births.</p>
+  </div>
+  <div>
+    <table>
+      <thead><tr><th>Quarter</th><th>Months in data</th><th class="n">Coverage</th><th class="n">Facilities</th></tr></thead>
+      <tbody>
+      {% for c in coverage_rows %}
+        <tr><td><b>{{ c.quarter }}</b></td><td>{{ c.months_in_data }}</td><td class="n">{{ c.months_present }} of {{ c.months_expected }} {% if c.low_coverage %}<span class="flag">low</span>{% endif %}</td><td class="n">{{ c.facilities_reporting }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <p class="note">Coverage is months present out of months expected. Q1 is also provisional because January and March each arrived twice.</p>
+  </div>
+</div>
+
+<h2>Top {{ cfg.TOP_N }} facilities by deliveries, {{ latest_q }}</h2>
+<table class="compact">
+  <thead><tr><th class="n">#</th><th>Facility</th><th>District</th><th>Province</th><th class="n">Deliveries</th><th class="n">Months</th><th>Repeated reports this year</th></tr></thead>
+  <tbody>
+  {% for t in top_rows %}
+    <tr><td class="n">{{ t.rank }}</td><td><b>{{ t.facility_name }}</b></td><td>{{ t.district }}</td><td>{{ t.province }}</td><td class="n">{{ t.deliveries|num }}</td><td class="n">{{ t.months_present }}</td><td>{% if t.conflicting_in_year %}<span class="flag">yes, provisional</span>{% else %}<span class="flag ok">no</span>{% endif %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div class="page-break"></div>
+<h2>Neonatal and maternal indicators</h2>
+<h3>National, by quarter</h3>
+<table>
+  <thead><tr><th>Quarter</th><th class="n">Deliveries</th><th class="n">Live births</th><th class="n">Stillbirths per 1,000</th><th class="n">Early NMR</th><th class="n">Late NMR</th><th class="n">NMR (0 to 28 days)</th><th class="n">Preterm %</th><th class="n">Low birth weight %</th><th class="n">Apgar under 7 %</th><th class="n">Months</th></tr></thead>
+  <tbody>
+  {% for n in national_rows %}
+    <tr><td><b>{{ n.quarter }}</b></td><td class="n">{{ n.deliveries|num }}</td><td class="n">{{ n.live_births|num }}</td><td class="n">{{ n.stillbirth_rate_per_1000|num(1) }}</td><td class="n">{{ n.early_nmr_per_1000|num(1) }}</td><td class="n">{{ n.late_nmr_per_1000|num(1) }}</td><td class="n">{{ n.nmr_per_1000|num(1) }}</td><td class="n">{{ n.preterm_pct|num(1) }}</td><td class="n">{{ n.lbw_pct|num(1) }}</td><td class="n">{{ n.apgar_lt7_pct|num(1) }}</td><td class="n">{{ n.months_present }} of {{ n.months_expected }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p class="note">NMR is neonatal mortality per 1,000 live births. The stillbirth rate uses live births plus stillbirths as its denominator. ANC visits are not in this export, so no ANC indicator is reported.</p>
+
+<h3>Cause of neonatal death, % of deaths</h3>
+<table>
+  <thead><tr><th>Quarter</th><th class="n">Birth asphyxia</th><th class="n">Prematurity</th><th class="n">Sepsis</th><th class="n">Congenital</th><th class="n">Other</th></tr></thead>
+  <tbody>
+  {% for n in national_rows %}
+    <tr><td><b>{{ n.quarter }}</b></td><td class="n">{{ n.cause_birth_asphyxia_pct|num(1) }}</td><td class="n">{{ n.cause_prematurity_pct|num(1) }}</td><td class="n">{{ n.cause_sepsis_pct|num(1) }}</td><td class="n">{{ n.cause_congenital_pct|num(1) }}</td><td class="n">{{ n.cause_other_pct|num(1) }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h3>By province, {{ latest_q }}</h3>
+<table>
+  <thead><tr><th>Province</th><th class="n">Deliveries</th><th class="n">Live births</th><th class="n">Stillbirths per 1,000</th><th class="n">NMR</th><th class="n">Preterm %</th><th class="n">Low birth weight %</th><th class="n">Apgar under 7 %</th></tr></thead>
+  <tbody>
+  {% for p in province_rows %}
+    <tr><td><b>{{ p.province }}</b></td><td class="n">{{ p.deliveries|num }}</td><td class="n">{{ p.live_births|num }}</td><td class="n">{{ p.stillbirth_rate_per_1000|num(1) }}</td><td class="n">{{ p.nmr_per_1000|num(1) }}</td><td class="n">{{ p.preterm_pct|num(1) }}</td><td class="n">{{ p.lbw_pct|num(1) }}</td><td class="n">{{ p.apgar_lt7_pct|num(1) }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h2>Trends, quarter over quarter</h2>
+<table>
+  <thead><tr><th>Quarter</th><th class="n">Months</th><th class="n">Deliveries</th><th class="n">Change</th><th class="n">Stillbirths per 1,000</th><th class="n">Change</th><th class="n">NMR</th><th class="n">Change</th><th>Comparable with the quarter before</th></tr></thead>
+  <tbody>
+  {% for t in trend_rows %}
+    <tr><td><b>{{ t.quarter }}</b></td><td class="n">{{ t.months_present }} of {{ t.months_expected }}</td><td class="n">{{ t.deliveries|num }}</td><td class="n">{% if t.deliveries_change_pct is not none %}{{ t.deliveries_change_pct|num(1) }}%{% endif %}</td><td class="n">{{ t.stillbirth_rate_per_1000|num(1) }}</td><td class="n">{% if t.stillbirth_rate_per_1000_change_pct is not none %}{{ t.stillbirth_rate_per_1000_change_pct|num(1) }}%{% endif %}</td><td class="n">{{ t.nmr_per_1000|num(1) }}</td><td class="n">{% if t.nmr_per_1000_change_pct is not none %}{{ t.nmr_per_1000_change_pct|num(1) }}%{% endif %}</td><td>{% if loop.first %}<span class="note">first quarter</span>{% elif t.comparable %}<span class="flag ok">yes</span>{% else %}<span class="flag">no, months missing</span>{% endif %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p class="note">Two quarters are comparable only when both are complete. In this export only Q2 to Q3 qualifies.</p>
+
+<div class="page-break"></div>
+<h2>Facility performance: reporting completeness</h2>
+<div class="tiles">
+  <div class="tile"><div class="v">{{ perf_summary.mean_observed }}%</div><div class="l">Average completeness seen in the data (months with a report out of 12)</div></div>
+  <div class="tile"><div class="v">{{ perf_summary.mean_self }}%</div><div class="l">Average completeness the facilities report themselves</div></div>
+  <div class="tile"><div class="v">{{ perf_summary.n_over_10 }} of {{ perf_summary.n }}</div><div class="l">Facilities where the two differ by more than 10 points</div></div>
+</div>
+<h3>Largest gaps between the two figures</h3>
+<table>
+  <thead><tr><th>Facility</th><th>District</th><th class="n">Seen in data %</th><th class="n">Self-reported %</th><th class="n">Gap (points)</th></tr></thead>
+  <tbody>
+  {% for p in perf_rows %}
+    <tr><td><b>{{ p.facility_name }}</b></td><td>{{ p.district }}</td><td class="n">{{ p.observed_completeness|num(1) }}</td><td class="n">{{ p.self_reported_completeness|num(1) }}</td><td class="n">{{ p.gap|num(1) }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+<p class="note">The completeness seen in the data is the same for every facility, because the same two months are missing everywhere. Timeliness is not reported: the export does not say when each report was sent.</p>
+
+<h2>Facility reporting status</h2>
+<div class="tiles">
+  {% for k, v in status_counts.items() %}<div class="tile"><div class="v">{{ v }}</div><div class="l">{{ k }}</div></div>{% endfor %}
+</div>
+{% if silent|length %}
+<p>{{ silent|length }} facilities have stopped reporting. See the reporting-status file for the full list.</p>
+{% else %}
+<p class="note">No facility has stopped reporting: every facility reported in the latest month of the export. Every facility is Partial because February is missing for all of them.</p>
+{% endif %}
+
+<h2>Data-quality findings</h2>
+{% for i in issues %}
+<div class="issue"><b>{{ i.issue }}</b> · {{ i.count }} affected<br>{{ i.detail }}{% if i.affected_ids %}<br><span class="ids">{{ i.affected_ids }}{% if i.affected_ids_total > 10 %} and {{ i.affected_ids_total - 10 }} more{% endif %}</span>{% endif %}</div>
+{% endfor %}
+<p class="note">Checks that passed: {% for i in issues_clean %}{{ i.issue }}{% if not loop.last %}; {% endif %}{% endfor %}.</p>
+
+<h2>Assumptions and gaps</h2>
+<ul>
+  <li><b>Expected months:</b> {{ cfg.EXPECTED_MONTHS[0] }} to {{ cfg.EXPECTED_MONTHS[-1] }}, every facility every month.</li>
+  <li><b>Repeated months:</b> the first version of each repeated month is used for now. The M&amp;E unit decides the real rule, for example keeping the version the district approved.</li>
+  <li><b>ANC visits:</b> not in this export, so they cannot be reported yet.</li>
+  <li><b>Timeliness:</b> needs the date each report was sent, which this export does not include.</li>
+  <li><b>Facility type:</b> for some facilities the recorded type contradicts the name. Province figures are unaffected; analysis by facility type waits until the facility list is confirmed.</li>
+  <li><b>Q1:</b> provisional until the M&amp;E unit confirms which January and March reports are correct.</li>
+</ul>
+
+</body>
+</html>

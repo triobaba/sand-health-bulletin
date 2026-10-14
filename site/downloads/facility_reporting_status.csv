@@ -1,0 +1,118 @@
+facility_id,facility_name,district,province,last_month_reported,months_present,conflicting_months,status
+BUG066,Bugesera Hospital,Bugesera,Eastern,2024-11,10,2,Partial
+BUG067,Bugesera Health Center 1,Bugesera,Eastern,2024-11,10,2,Partial
+BUG068,Bugesera Health Center 2,Bugesera,Eastern,2024-11,10,2,Partial
+BUG069,Bugesera Health Center 3,Bugesera,Eastern,2024-11,10,2,Partial
+BUR047,Burera Hospital,Burera,Northern,2024-11,10,2,Partial
+BUR048,Burera Health Center 1,Burera,Northern,2024-11,10,2,Partial
+BUR049,Burera Health Center 2,Burera,Northern,2024-11,10,2,Partial
+GAK050,Gakenke Hospital,Gakenke,Northern,2024-11,10,2,Partial
+GAK051,Gakenke Health Center 1,Gakenke,Northern,2024-11,10,2,Partial
+GAK052,Gakenke Health Center 2,Gakenke,Northern,2024-11,10,2,Partial
+GAK053,Gakenke Health Center 3,Gakenke,Northern,2024-11,10,2,Partial
+GAK054,Gakenke Health Center 4,Gakenke,Northern,2024-11,10,2,Partial
+GAS006,Gasabo Hospital,Gasabo,Kigali City,2024-11,10,2,Partial
+GAS007,Gasabo Health Center 1,Gasabo,Kigali City,2024-11,10,2,Partial
+GAS008,Gasabo Health Center 2,Gasabo,Kigali City,2024-11,10,2,Partial
+GAS009,Gasabo Health Center 3,Gasabo,Kigali City,2024-11,10,2,Partial
+GAT073,Gatsibo Hospital,Gatsibo,Eastern,2024-11,10,2,Partial
+GAT074,Gatsibo Health Center 1,Gatsibo,Eastern,2024-11,10,2,Partial
+GAT075,Gatsibo Health Center 2,Gatsibo,Eastern,2024-11,10,2,Partial
+GAT076,Gatsibo Health Center 3,Gatsibo,Eastern,2024-11,10,2,Partial
+GAT077,Gatsibo Health Center 4,Gatsibo,Eastern,2024-11,10,2,Partial
+GIC055,Gicumbi Hospital,Gicumbi,Northern,2024-11,10,2,Partial
+GIC056,Gicumbi Health Center 1,Gicumbi,Northern,2024-11,10,2,Partial
+GIC057,Gicumbi Health Center 2,Gicumbi,Northern,2024-11,10,2,Partial
+GIC058,Gicumbi Health Center 3,Gicumbi,Northern,2024-11,10,2,Partial
+GIC059,Gicumbi Health Center 4,Gicumbi,Northern,2024-11,10,2,Partial
+GIS022,Gisagara Hospital,Gisagara,Southern,2024-11,10,2,Partial
+GIS023,Gisagara Health Center 1,Gisagara,Southern,2024-11,10,2,Partial
+GIS024,Gisagara Health Center 2,Gisagara,Southern,2024-11,10,2,Partial
+GIS025,Gisagara Health Center 3,Gisagara,Southern,2024-11,10,2,Partial
+GIS026,Gisagara Health Center 4,Gisagara,Southern,2024-11,10,2,Partial
+HUY014,Huye Hospital,Huye,Southern,2024-11,10,2,Partial
+HUY015,Huye Health Center 1,Huye,Southern,2024-11,10,2,Partial
+HUY016,Huye Health Center 2,Huye,Southern,2024-11,10,2,Partial
+KAM033,Kamonyi Hospital,Kamonyi,Southern,2024-11,10,2,Partial
+KAM034,Kamonyi Health Center 1,Kamonyi,Southern,2024-11,10,2,Partial
+KAM035,Kamonyi Health Center 2,Kamonyi,Southern,2024-11,10,2,Partial
+KAM036,Kamonyi Health Center 3,Kamonyi,Southern,2024-11,10,2,Partial
+KAR114,Karongi Hospital,Karongi,Western,2024-11,10,2,Partial
+KAR115,Karongi Health Center 1,Karongi,Western,2024-11,10,2,Partial
+KAR116,Karongi Health Center 2,Karongi,Western,2024-11,10,2,Partial
+KAR117,Karongi Health Center 3,Karongi,Western,2024-11,10,2,Partial
+KAY078,Kayonza Hospital,Kayonza,Eastern,2024-11,10,2,Partial
+KAY079,Kayonza Health Center 1,Kayonza,Eastern,2024-11,10,2,Partial
+KAY080,Kayonza Health Center 2,Kayonza,Eastern,2024-11,10,2,Partial
+KAY081,Kayonza Health Center 3,Kayonza,Eastern,2024-11,10,2,Partial
+KIC010,Kicukiro Hospital,Kicukiro,Kigali City,2024-11,10,2,Partial
+KIC011,Kicukiro Health Center 1,Kicukiro,Kigali City,2024-11,10,2,Partial
+KIC012,Kicukiro Health Center 2,Kicukiro,Kigali City,2024-11,10,2,Partial
+KIC013,Kicukiro Health Center 3,Kicukiro,Kigali City,2024-11,10,2,Partial
+KIR082,Kirehe Hospital,Kirehe,Eastern,2024-11,10,2,Partial
+KIR083,Kirehe Health Center 1,Kirehe,Eastern,2024-11,10,2,Partial
+KIR084,Kirehe Health Center 2,Kirehe,Eastern,2024-11,10,2,Partial
+KIR085,Kirehe Health Center 3,Kirehe,Eastern,2024-11,10,2,Partial
+MUH030,Muhanga Hospital,Muhanga,Southern,2024-11,10,2,Partial
+MUH031,Muhanga Health Center 1,Muhanga,Southern,2024-11,10,2,Partial
+MUH032,Muhanga Health Center 2,Muhanga,Southern,2024-11,10,2,Partial
+MUS044,Musanze Hospital,Musanze,Northern,2024-11,10,2,Partial
+MUS045,Musanze Health Center 1,Musanze,Northern,2024-11,10,2,Partial
+MUS046,Musanze Health Center 2,Musanze,Northern,2024-11,10,2,Partial
+NGO063,Ngoma Hospital,Ngoma,Eastern,2024-11,10,2,Partial
+NGO064,Ngoma Health Center 1,Ngoma,Eastern,2024-11,10,2,Partial
+NGO065,Ngoma Health Center 2,Ngoma,Eastern,2024-11,10,2,Partial
+NGO098,Ngororero Hospital,Ngororero,Western,2024-11,10,2,Partial
+NGO099,Ngororero Health Center 1,Ngororero,Western,2024-11,10,2,Partial
+NGO100,Ngororero Health Center 2,Ngororero,Western,2024-11,10,2,Partial
+NGO101,Ngororero Health Center 3,Ngororero,Western,2024-11,10,2,Partial
+NGO102,Ngororero Health Center 4,Ngororero,Western,2024-11,10,2,Partial
+NYA093,Nyabihu Hospital,Nyabihu,Western,2024-11,10,2,Partial
+NYA094,Nyabihu Health Center 1,Nyabihu,Western,2024-11,10,2,Partial
+NYA095,Nyabihu Health Center 2,Nyabihu,Western,2024-11,10,2,Partial
+NYA096,Nyabihu Health Center 3,Nyabihu,Western,2024-11,10,2,Partial
+NYA097,Nyabihu Health Center 4,Nyabihu,Western,2024-11,10,2,Partial
+NYA086,Nyagatare Hospital,Nyagatare,Eastern,2024-11,10,2,Partial
+NYA087,Nyagatare Health Center 1,Nyagatare,Eastern,2024-11,10,2,Partial
+NYA088,Nyagatare Health Center 2,Nyagatare,Eastern,2024-11,10,2,Partial
+NYA089,Nyagatare Health Center 3,Nyagatare,Eastern,2024-11,10,2,Partial
+NYA040,Nyamagabe Hospital,Nyamagabe,Southern,2024-11,10,2,Partial
+NYA041,Nyamagabe Health Center 1,Nyamagabe,Southern,2024-11,10,2,Partial
+NYA042,Nyamagabe Health Center 2,Nyamagabe,Southern,2024-11,10,2,Partial
+NYA043,Nyamagabe Health Center 3,Nyamagabe,Southern,2024-11,10,2,Partial
+NYA106,Nyamasheke Hospital,Nyamasheke,Western,2024-11,10,2,Partial
+NYA107,Nyamasheke Health Center 1,Nyamasheke,Western,2024-11,10,2,Partial
+NYA108,Nyamasheke Health Center 2,Nyamasheke,Western,2024-11,10,2,Partial
+NYA017,Nyanza Hospital,Nyanza,Southern,2024-11,10,2,Partial
+NYA018,Nyanza Health Center 1,Nyanza,Southern,2024-11,10,2,Partial
+NYA019,Nyanza Health Center 2,Nyanza,Southern,2024-11,10,2,Partial
+NYA020,Nyanza Health Center 3,Nyanza,Southern,2024-11,10,2,Partial
+NYA021,Nyanza Health Center 4,Nyanza,Southern,2024-11,10,2,Partial
+NYA001,Nyarugenge Hospital,Nyarugenge,Kigali City,2024-11,10,2,Partial
+NYA002,Nyarugenge Health Center 1,Nyarugenge,Kigali City,2024-11,10,2,Partial
+NYA003,Nyarugenge Health Center 2,Nyarugenge,Kigali City,2024-11,10,2,Partial
+NYA004,Nyarugenge Health Center 3,Nyarugenge,Kigali City,2024-11,10,2,Partial
+NYA005,Nyarugenge Health Center 4,Nyarugenge,Kigali City,2024-11,10,2,Partial
+NYA027,Nyaruguru Hospital,Nyaruguru,Southern,2024-11,10,2,Partial
+NYA028,Nyaruguru Health Center 1,Nyaruguru,Southern,2024-11,10,2,Partial
+NYA029,Nyaruguru Health Center 2,Nyaruguru,Southern,2024-11,10,2,Partial
+RUB090,Rubavu Hospital,Rubavu,Western,2024-11,10,2,Partial
+RUB091,Rubavu Health Center 1,Rubavu,Western,2024-11,10,2,Partial
+RUB092,Rubavu Health Center 2,Rubavu,Western,2024-11,10,2,Partial
+RUH037,Ruhango Hospital,Ruhango,Southern,2024-11,10,2,Partial
+RUH038,Ruhango Health Center 1,Ruhango,Southern,2024-11,10,2,Partial
+RUH039,Ruhango Health Center 2,Ruhango,Southern,2024-11,10,2,Partial
+RUL060,Rulindo Hospital,Rulindo,Northern,2024-11,10,2,Partial
+RUL061,Rulindo Health Center 1,Rulindo,Northern,2024-11,10,2,Partial
+RUL062,Rulindo Health Center 2,Rulindo,Northern,2024-11,10,2,Partial
+RUS103,Rusizi Hospital,Rusizi,Western,2024-11,10,2,Partial
+RUS104,Rusizi Health Center 1,Rusizi,Western,2024-11,10,2,Partial
+RUS105,Rusizi Health Center 2,Rusizi,Western,2024-11,10,2,Partial
+RUT109,Rutsiro Hospital,Rutsiro,Western,2024-11,10,2,Partial
+RUT110,Rutsiro Health Center 1,Rutsiro,Western,2024-11,10,2,Partial
+RUT111,Rutsiro Health Center 2,Rutsiro,Western,2024-11,10,2,Partial
+RUT112,Rutsiro Health Center 3,Rutsiro,Western,2024-11,10,2,Partial
+RUT113,Rutsiro Health Center 4,Rutsiro,Western,2024-11,10,2,Partial
+RWA070,Rwamagana Hospital,Rwamagana,Eastern,2024-11,10,2,Partial
+RWA071,Rwamagana Health Center 1,Rwamagana,Eastern,2024-11,10,2,Partial
+RWA072,Rwamagana Health Center 2,Rwamagana,Eastern,2024-11,10,2,Partial

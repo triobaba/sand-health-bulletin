@@ -1,0 +1,12 @@
+issue,detail,count,affected_ids,affected_ids_total
+Facility-months reported twice with different values,"234 facility-months have two reports that disagree (0 rows are exact copies). Months affected: 2024-01, 2024-03.",468,NYA001 2024-01; NYA002 2024-01; NYA003 2024-01; NYA004 2024-01; NYA005 2024-01; GAS006 2024-01; GAS007 2024-01; GAS008 2024-01; GAS009 2024-01; KIC010 2024-01,234
+Missing reporting month,2024-02 is absent for 117 of 117 facilities.,117,BUG066; BUG067; BUG068; BUG069; BUR047; BUR048; BUR049; GAK050; GAK051; GAK052,117
+Missing reporting month,2024-12 is absent for 117 of 117 facilities.,117,BUG066; BUG067; BUG068; BUG069; BUR047; BUR048; BUR049; GAK050; GAK051; GAK052,117
+Negative values,Rows with any negative count.,0,,0
+Live births exceed deliveries,Impossible by definition; indicates a data entry error.,0,,0
+Cause-of-death columns do not sum to total deaths,Each neonatal death should have exactly one recorded cause.,0,,0
+Percent values stored as text,"Columns: death_audits_conducted_pct, staff_trained_on_protocol_pct, hmis_reporting_completeness, bag_mask_ventilation_competency, thermal_care_protocol_compliance, infection_prevention_score.",6,death_audits_conducted_pct; staff_trained_on_protocol_pct; hmis_reporting_completeness; bag_mask_ventilation_competency; thermal_care_protocol_compliance; infection_prevention_score,6
+Never used as a date value,"governance.protocol_last_updated: treated as missing, not as a date.",14,NYA002; NYA004; GAS007; NYA019; NYA021; NYA028; MUS044; GAK052; NGO065; NYA088,14
+Never used as a date value,"healthcare_workers.last_neonatal_training_date: treated as missing, not as a date.",48,NYA002; GAS007; GAS008; KIC011; HUY014; HUY016; NYA018; NYA019; NYA021; GIS023,48
+Facility tier contradicts facility name,"For example, a health center tagged as a referral hospital. The data cannot tell which one is right.",28,NYA003; NYA004; GAS007; KIC012; HUY015; NYA017; GIS022; GIS025; KAM033; NYA040,28
+GPS coordinates far from district median,"More than 0.5 degrees from the middle of their district. When this affects most facilities, the whole coordinate set is unreliable, so Health Atlas should not use it until the facility master is confirmed.",61,NYA002; NYA004; NYA005; GAS006; GAS007; GAS009; KIC012; HUY014; NYA017; NYA018,61

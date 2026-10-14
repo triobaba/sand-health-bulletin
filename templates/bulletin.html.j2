@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quarterly Health Bulletin – Neonatal Care, 2024 (prototype)</title>
+<style>
+  :root { --ink:#1b1f23; --muted:#5b6470; --line:#d9dee5; --soft:#f4f6f8; --accent:#0b5d6b; --warn:#9a3b00; --warnbg:#fff4ec; }
+  * { box-sizing:border-box; }
+  body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color:var(--ink); margin:0; padding:32px 40px; line-height:1.45; font-size:14px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  h2 { font-size:18px; margin:36px 0 10px; padding-bottom:6px; border-bottom:2px solid var(--accent); }
+  h3 { font-size:14px; margin:18px 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  .meta { color:var(--muted); margin-bottom:14px; }
+  .banner { background:var(--warnbg); border-left:4px solid var(--warn); padding:10px 14px; margin:14px 0 24px; }
+  .cards { display:flex; gap:14px; flex-wrap:wrap; margin:10px 0 6px; }
+  .card { flex:1 1 150px; background:var(--soft); padding:12px 14px; border-radius:6px; }
+  .card .v { font-size:24px; font-weight:600; }
+  .card .l { color:var(--muted); font-size:12px; }
+  table.tbl { border-collapse:collapse; width:100%; margin:8px 0 6px; font-size:13px; }
+  table.tbl th { text-align:left; background:var(--soft); padding:6px 8px; border-bottom:1px solid var(--line); }
+  table.tbl td { padding:5px 8px; border-bottom:1px solid var(--line); }
+  table.tbl tr:nth-child(even) td { background:#fafbfc; }
+  .note { color:var(--muted); font-size:12.5px; margin:4px 0 0; }
+  .issue { border:1px solid var(--line); border-radius:6px; padding:10px 12px; margin:8px 0; }
+  .issue b { color:var(--warn); }
+  .ids { font-family:ui-monospace, Menlo, Consolas, monospace; font-size:12px; color:var(--muted); }
+  ul { margin:6px 0; padding-left:20px; }
+  @media print { body { padding:16mm; } h2 { page-break-after:avoid; } table { page-break-inside:auto; } }
+</style>
+</head>
+<body>
+
+<h1>Quarterly Health Bulletin – Neonatal Care, 2024</h1>
+<div class="meta">Prototype output · generated {{ generated_at }} · source: DHIS2-like facility-month export (117 facilities)</div>
+<div class="banner"><strong>Figures are provisional.</strong> Coverage (months present out of 3) is shown next to every quarterly number. Two months are missing from the export and two months contain conflicting duplicate submissions. See <em>Data quality findings</em> before quoting any figure.</div>
+
+<h2>Headline numbers, {{ latest_q }}</h2>
+<div class="cards">
+  <div class="card"><div class="v">{{ "{:,}".format(headline.deliveries|int) }}</div><div class="l">Deliveries</div></div>
+  <div class="card"><div class="v">{{ "{:,}".format(headline.live_births|int) }}</div><div class="l">Live births</div></div>
+  <div class="card"><div class="v">{{ headline.stillbirth_rate_per_1000 }}</div><div class="l">Stillbirths per 1,000 births</div></div>
+  <div class="card"><div class="v">{{ headline.nmr_per_1000 }}</div><div class="l">Neonatal deaths per 1,000 live births (0–28d)</div></div>
+  <div class="card"><div class="v">{{ headline_cov.months_present }}/3</div><div class="l">Months present in {{ latest_q }}</div></div>
+</div>
+<p class="note">{{ latest_q }} contains {{ headline_cov.months_in_data }} only. Counts are not comparable with a full quarter; rates are comparable but rest on fewer births.</p>
+
+<h2>Coverage by quarter</h2>
+{{ coverage[["quarter","months_in_data","months_present","months_expected","facilities_reporting","coverage_pct","low_coverage"]] | table }}
+<p class="note">Coverage = months present ÷ months expected. A quarter is flagged low when fewer than 2 of 3 months are in the export.</p>
+
+<h2>Top {{ cfg.TOP_N }} facilities by deliveries, {{ latest_q }}</h2>
+{{ top[["facility_name","district","province","deliveries","months_present","conflicting_in_year"]] | table_idx }}
+<p class="note">"conflicting_in_year" marks facilities with a duplicated submission for January or March; those months use the first submission only, so their annual totals are provisional.</p>
+
+<h2>Neonatal and maternal indicators</h2>
+<h3>National, by quarter</h3>
+{{ national[["quarter","deliveries","live_births","stillbirths","stillbirth_rate_per_1000","early_nmr_per_1000","late_nmr_per_1000","nmr_per_1000","preterm_pct","lbw_pct","apgar_lt7_pct","months_present"]] | table }}
+<h3>Cause of neonatal death, national, by quarter (% of deaths)</h3>
+{{ national[["quarter","cause_birth_asphyxia_pct","cause_prematurity_pct","cause_sepsis_pct","cause_congenital_pct","cause_other_pct"]] | table }}
+<h3>By province, {{ latest_q }}</h3>
+{{ by_province[["province","deliveries","live_births","stillbirth_rate_per_1000","nmr_per_1000","preterm_pct","lbw_pct","apgar_lt7_pct"]] | table }}
+<p class="note">Stillbirth rate uses (live births + stillbirths) as denominator; mortality and percentages use live births. ANC visits are not in this export and are therefore not reported.</p>
+
+<h2>Facility performance: reporting completeness</h2>
+<div class="cards">
+  <div class="card"><div class="v">{{ perf_summary.mean_observed }}%</div><div class="l">Mean observed completeness (months with a row ÷ 12)</div></div>
+  <div class="card"><div class="v">{{ perf_summary.mean_self }}%</div><div class="l">Mean self-reported HMIS completeness</div></div>
+  <div class="card"><div class="v">{{ perf_summary.n_over_10 }} of {{ perf_summary.n }}</div><div class="l">Facilities where the two differ by more than 10 points</div></div>
+</div>
+<h3>Largest gaps between observed and self-reported</h3>
+{{ perf_top[["facility_name","district","months_present","observed_completeness","self_reported_completeness","gap","conflicting_months"]] | table }}
+<p class="note">Observed completeness is identical for every facility because the same two months are missing for all of them; the variation is entirely in the self-reported figure. Timeliness is not computed: the export has no submission timestamp.</p>
+
+<h2>Trends, quarter over quarter</h2>
+{{ trends[["quarter","months_present","deliveries","deliveries_change_pct","stillbirth_rate_per_1000","stillbirth_rate_per_1000_change_pct","nmr_per_1000","nmr_per_1000_change_pct","comparable"]] | table }}
+<p class="note">Only Q2 to Q3 has three months on both sides, so only that change is comparable. The apparent fall in deliveries from Q1 to Q4 is an export artefact: Q1 carries duplicated January and March submissions and Q4 has only October and November.</p>
+
+<h2>Facility reporting status</h2>
+<div class="cards">
+  {% for k, v in status_counts.items() %}<div class="card"><div class="v">{{ v }}</div><div class="l">{{ k }}</div></div>{% endfor %}
+</div>
+{% if silent|length %}
+<h3>Silent facilities</h3>
+{{ silent | table }}
+{% else %}
+<p class="note">No facility is silent: every facility reported in the latest month of the export. Every facility is "Partial" because February is missing for all of them.</p>
+{% endif %}
+
+<h2>Data quality findings</h2>
+{% for i in issues %}
+<div class="issue">
+  <b>{{ i.issue }}</b> · {{ i.count }} affected<br>
+  {{ i.detail }}<br>
+  {% if i.affected_ids %}<span class="ids">{{ i.affected_ids }}{% if i.affected_ids_total > 10 %} … (+{{ i.affected_ids_total - 10 }} more){% endif %}</span>{% endif %}
+</div>
+{% endfor %}
+<p class="note">Checks that passed: {% for i in issues_clean %}{{ i.issue }}{% if not loop.last %}; {% endif %}{% endfor %}.</p>
+
+<h2>Assumptions and gaps</h2>
+<ul>
+  <li><strong>Expected months:</strong> {{ cfg.EXPECTED_MONTHS[0] }} to {{ cfg.EXPECTED_MONTHS[-1] }}, every facility every month. In production this comes from the DHIS2 reporting calendar.</li>
+  <li><strong>Duplicate rule:</strong> "{{ cfg.DUPLICATE_RULE }}". A placeholder. The M&E unit decides whether the latest submission or the approved dataset wins; the pipeline will apply that rule and log every resolution.</li>
+  <li><strong>ANC visits:</strong> not in this export. Requires the ANC data elements to be added to the DHIS2 export before the bulletin can report them.</li>
+  <li><strong>Timeliness:</strong> not computable without a submission timestamp. DHIS2 exposes <em>lastUpdated</em> per data value; this is the Week 2 request.</li>
+  <li><strong>Facility tier:</strong> tier_level and facility_name disagree for some facilities. Provincial rollups use the province column, which is unaffected; tier-based analysis is withheld until the facility master is confirmed.</li>
+  <li><strong>Q1 figures:</strong> provisional until the M&E unit confirms which January and March submissions are correct.</li>
+</ul>
+
+</body>
+</html>

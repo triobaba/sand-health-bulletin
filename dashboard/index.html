@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quarterly Health Bulletin · Neonatal Care 2024</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Prototype dashboard of the Quarterly Health Bulletin for neonatal care, built from DHIS2-like facility data. Figures are provisional.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Lilex:wght@400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the figures</a>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="kicker">Prototype for the Rwanda Ministry of Health <span class="prep">· Prepared for Sand</span></div>
+      <h1>Quarterly Health Bulletin <span class="h1-sub">Neonatal care, 2024</span></h1>
+    </div>
+    <div class="top-actions">
+      <div class="seg" role="radiogroup" aria-label="Quarter" id="quarterSwitch"></div>
+      <a class="btn primary" id="pdfLink" href="#" download><span class="pdf-long">Download PDF</span><span class="pdf-short">PDF</span></a>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="Sections">
+    <a href="#overview">Overview</a>
+    <a href="#indicators">Indicators</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#reporting">Reporting</a>
+    <a href="#quality">Data quality</a>
+    <a href="#downloads">Downloads</a>
+  </nav>
+</header>
+
+<main id="main" class="wrap">
+  <div class="banner" role="note">
+    <strong>Figures are provisional.</strong>
+    <span id="bannerText">Every quarterly figure shows how many of its three months are in the data. Read the data-quality section before quoting any figure.</span>
+  </div>
+
+  <section id="overview" class="block">
+    <div class="block-head">
+      <h2>Headline numbers <span class="qlabel" data-qlabel></span></h2>
+      <p class="sub" id="coverageNote"></p>
+    </div>
+    <div class="tiles" id="tiles"></div>
+
+    <div class="grid two">
+      <figure class="panel">
+        <figcaption>
+          <h3>Deliveries by quarter</h3>
+          <p class="sub">Amber bars are missing a month, so they are not comparable with full quarters.</p>
+        </figcaption>
+        <div class="chart" id="chartDeliveries"></div>
+        <details class="tableview"><summary>Show as a table</summary><div id="tableDeliveries"></div></details>
+      </figure>
+      <figure class="panel">
+        <figcaption>
+          <h3>Stillbirth and neonatal death rates</h3>
+          <p class="sub">Per 1,000 births. Rates can be compared across quarters even when a month is missing.</p>
+        </figcaption>
+        <div class="legend" id="legendRates"></div>
+        <div class="chart" id="chartRates"></div>
+        <details class="tableview"><summary>Show as a table</summary><div id="tableRates"></div></details>
+      </figure>
+    </div>
+
+    <div class="callout">
+      <h3>Why Q4 seems to fall by a third</h3>
+      <p id="falseDrop"></p>
+    </div>
+  </section>
+
+  <section id="indicators" class="block">
+    <div class="block-head">
+      <h2>Indicators by province <span class="qlabel" data-qlabel></span></h2>
+      <div class="controls">
+        <label for="indicatorSelect">Indicator</label>
+        <select id="indicatorSelect"></select>
+      </div>
+    </div>
+    <div class="grid two">
+      <figure class="panel">
+        <figcaption><h3 id="provinceTitle"></h3><p class="sub" id="provinceSub"></p></figcaption>
+        <div class="chart" id="chartProvince"></div>
+        <details class="tableview"><summary>Show as a table</summary><div id="tableProvince"></div></details>
+      </figure>
+      <figure class="panel">
+        <figcaption><h3>Cause of neonatal death</h3><p class="sub">Share of all neonatal deaths, national.</p></figcaption>
+        <div class="chart" id="chartCauses"></div>
+        <details class="tableview"><summary>Show as a table</summary><div id="tableCauses"></div></details>
+      </figure>
+    </div>
+    <p class="fine">ANC visits are not in this export, so the bulletin cannot report them yet. The stillbirth rate uses live births plus stillbirths as its denominator; every other rate uses live births.</p>
+  </section>
+
+  <section id="facilities" class="block">
+    <div class="block-head">
+      <h2>Top 10 facilities by deliveries <span class="qlabel" data-qlabel></span></h2>
+      <p class="sub">Facilities marked provisional sent a repeated report for January or March this year.</p>
+    </div>
+    <div class="panel flush"><div class="tablewrap" id="tableTop"></div></div>
+  </section>
+
+  <section id="reporting" class="block">
+    <div class="block-head">
+      <h2>Reporting completeness and status</h2>
+      <p class="sub">What the data shows, compared with what each facility reports about itself.</p>
+    </div>
+    <div class="tiles" id="perfTiles"></div>
+    <div class="grid two">
+      <figure class="panel">
+        <figcaption><h3>Largest gaps between the two figures</h3><p class="sub">Points of difference: completeness seen in the data minus the facility's own figure.</p></figcaption>
+        <div class="chart" id="chartGaps"></div>
+      </figure>
+      <div class="panel">
+        <h3>Facility reporting status</h3>
+        <p class="sub" id="statusNote"></p>
+        <div class="controls row">
+          <input type="search" id="statusSearch" placeholder="Search facility or district" aria-label="Search facilities">
+          <select id="statusProvince" aria-label="Province"></select>
+          <select id="statusFilter" aria-label="Status"></select>
+        </div>
+        <div class="tablewrap scroll" id="tableStatus"></div>
+        <p class="fine" id="statusCount"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="quality" class="block">
+    <div class="block-head">
+      <h2>Data-quality findings</h2>
+      <p class="sub">Problems the checks found in this export. Nothing here is fixed silently; each one goes back to the M&amp;E unit.</p>
+    </div>
+    <div class="issues" id="issues"></div>
+    <p class="fine" id="passed"></p>
+  </section>
+
+  <section id="downloads" class="block">
+    <div class="block-head"><h2>Downloads</h2></div>
+    <div class="downloads">
+      <a class="dl" id="dlPdf" href="#" download><span class="dl-t">Bulletin (PDF)</span><span class="dl-d">The printable bulletin, A4</span></a>
+      <a class="dl" href="downloads/data_quality_report.csv" download><span class="dl-t">Data-quality report (CSV)</span><span class="dl-d">One row per check, with affected facilities</span></a>
+      <a class="dl" href="downloads/facility_reporting_status.csv" download><span class="dl-t">Reporting status (CSV)</span><span class="dl-d">Every facility: last month reported and status</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Built by Triumphant Babalola for the Sand Forward Deployed Engineer assignment. This is a prototype, not an official Ministry of Health publication. The data is the sample DHIS2-like export provided with the assignment, not live Ministry data. <span id="generated"></span></p>
+  </div>
+</footer>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<script src="data/bulletin-data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
